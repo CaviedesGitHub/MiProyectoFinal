@@ -80,14 +80,15 @@ class VistaConsultaPerfil(Resource):
             return {"Mensaje":"Falta la lista de habilidades."}, 200
 
 class VistaConsultaPefiles(Resource):
-    def get(self):
+    def post(self):
         print("Consulta Perfiles.")
         lstHabils=request.json.get("lstHabils")
         if lstHabils is not None:
             long_lista=len(lstHabils)
             conteo=(func.count(HabilPerfil.id_perfil)).label('conteo')
             lstCumplenHabils = db.session.query(HabilPerfil.id_perfil, HabilPerfil.id_habil, HabilPerfil.valoracion).filter(HabilPerfil.id_perfil.in_(db.session.query(HabilPerfil.id_perfil).filter(HabilPerfil.id_habil.in_(lstHabils)).group_by(HabilPerfil.id_perfil).having(conteo==long_lista)))
-
+            for h in lstCumplenHabils:
+                print(h)
             num_perfil=0
             data1 = []
             data = []

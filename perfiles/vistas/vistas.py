@@ -31,14 +31,14 @@ class VistaCreaPerfil(Resource):
     def post(self):
         print("Creando Perfil")
         lstHabils=request.json.get("lstHabils")
-        if lstHabils is not None:
+        if lstHabils is not None and len(lstHabils!=0):
             p=existePerfil(lstHabils)
             if p==0:
                 np=creaPerfil(lstHabils)
             else:
                 return {"Mensaje":"Perfil ya existe.", "id_perfil":p}, 200    
         else:
-            return {"Mensaje":"Falta la lista de habilidades."}, 200
+            return {"Mensaje":"Falta la lista de habilidades.", "id_perfil":0}, 200
         return {"Mensaje":"Nuevo Perfil creado.", "id_perfil":np}, 200 
 
 class VistaCreaPerfilPlus(Resource):

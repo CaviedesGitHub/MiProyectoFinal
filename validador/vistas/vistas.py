@@ -51,56 +51,46 @@ class VistaPerfil(Resource):
             if (result1==-1 or result1 is None) and (result2==-1 or result2 is None) and (result3==-1 or result3 is None):
                 return {"Mensaje":"Error en el Motor de Emparejamiento."}, 200
             elif (result1==-1 or result1 is None) and (result2==-1 or result2 is None):
-                Lst_Perfiles=result3.get('Perfiles')
+                Lst_Candidatos=result3.get('Candidatos')
             elif (result1==-1 or result1 is None) and (result3==-1 or result3 is None):
-                Lst_Perfiles=result2.get('Perfiles')
+                Lst_Candidatos=result2.get('Candidatos')
             elif (result2==-1 or result2 is None) and (result3==-1 or result3 is None):
-                Lst_Perfiles=result1.get('Perfiles')
+                Lst_Candidatos=result1.get('Candidatos')
             elif (result1==-1 or result1 is None):
-                if result2.get('Perfiles')==result3.get('Perfiles'):
-                    Lst_Perfiles=result2.get('Perfiles')
+                if result2.get('Candidatos')==result3.get('Candidatos'):
+                    Lst_Candidatos=result2.get('Candidatos')
                 else:
-                    common = set(result2.get('Perfiles')).intersection(result3.get('Perfiles'))
-                    Lst_Perfiles=list(common)
+                    common = set(result2.get('Candidatos')).intersection(result3.get('Candidatos'))
+                    Lst_Candidatos=list(common)
             elif (result2==-1 or result2 is None):
-                if result1.get('Perfiles')==result3.get('Perfiles'):
-                    Lst_Perfiles=result1.get('Perfiles')
+                if result1.get('Candidatos')==result3.get('Candidatos'):
+                    Lst_Candidatos=result1.get('Candidatos')
                 else:
-                    common = set(result1.get('Perfiles')).intersection(result3.get('Perfiles'))
-                    Lst_Perfiles=list(common)
+                    common = set(result1.get('Candidatos')).intersection(result3.get('Candidatos'))
+                    Lst_Candidatos=list(common)
             elif (result3==-1 or result3 is None):
-                if result1.get('Perfiles')==result2.get('Perfiles'):
-                    Lst_Perfiles=result1.get('Perfiles')
+                if result1.get('Candidatos')==result2.get('Candidatos'):
+                    Lst_Candidatos=result1.get('Candidatos')
                 else:
-                    common = set(result1.get('Perfiles')).intersection(result2.get('Perfiles'))
-                    Lst_Perfiles=list(common)
+                    common = set(result1.get('Candidatos')).intersection(result2.get('Candidatos'))
+                    Lst_Candidatos=list(common)
             else:
-                if result1.get('Perfiles')==result2.get('Perfiles') and result2.get('Perfiles')==result3.get('Perfiles'):
-                    Lst_Perfiles=result1.get('Perfiles')
-                elif result1.get('Perfiles')==result2.get('Perfiles'):
-                    Lst_Perfiles=result1.get('Perfiles')
-                elif result1.get('Perfiles')==result3.get('Perfiles'):
-                    Lst_Perfiles=result1.get('Perfiles')
-                elif result2.get('Perfiles')==result3.get('Perfiles'):
-                    Lst_Perfiles=result2.get('Perfiles')
+                if result1.get('Candidatos')==result2.get('Candidatos') and result2.get('Candidatos')==result3.get('Candidatos'):
+                    Lst_Candidatos=result1.get('Candidatos')
+                elif result1.get('Candidatos')==result2.get('Candidatos'):
+                    Lst_Candidatos=result1.get('Candidatos')
+                elif result1.get('Candidatos')==result3.get('Candidatos'):
+                    Lst_Candidatos=result1.get('Candidatos')
+                elif result2.get('Candidatos')==result3.get('Candidatos'):
+                    Lst_Candidatos=result2.get('Candidatos')
                 else:
-                    common = set(result1.get('Perfiles')).intersection(result2.get('Perfiles'))
-                    common = common.intersection(result3.get('Perfiles'))
-                    Lst_Perfiles=list(common)
+                    common = set(result1.get('Candidatos')).intersection(result2.get('Candidatos'))
+                    common = common.intersection(result3.get('Candidatos'))
+                    Lst_Candidatos=list(common)
 
-        for pp in Lst_Perfiles:
-            print(pp) 
+        Lst_Candidatos=sorted(Lst_Candidatos, key=lambda i: i['Calificacion'], reverse=True)
 
-        Lst_Resp=[]
-        for p in Lst_Perfiles:
-            Id_Perfil=p.get("id_perfil")
-            Cal=p.get("Calificacion")
-            if Cal>70:
-                Dict_Perfil={}
-                Dict_Perfil["Id_Perfil"]=Id_Perfil
-                Dict_Perfil["Calificacion"]=Cal
-                Lst_Resp.append(Dict_Perfil)
-        return {"Seleccion":Lst_Resp}, 200
+        return {"Seleccion":Lst_Candidatos}, 200
 
 def solicitud_motor(candidatos, id_motor, url, num_rq):
     headers={} #headers = {"Authorization": f"Bearer {os.environ.get('TRUE_NATIVE_TOKEN')}"}

@@ -55,7 +55,7 @@ class Candidato(db.Model):
 
     @staticmethod
     def get_count():
-        return Datos_Academicos.query.count()
+        return Candidato.query.count()
 
 class EnumADiccionario(fields.Field):
     def _serialize(self, value, attr, obj, **kwargs):

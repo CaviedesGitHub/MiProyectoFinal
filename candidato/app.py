@@ -1,5 +1,5 @@
 from candidato import create_app
-from candidato.vistas.vistas import VistaPing, VistaBorrar
+from candidato.vistas.vistas import VistaPing, VistaBorrar, VistaCandidatosPerfiles
 from candidato.modelos.modelos import db, Candidato, Estado
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
@@ -21,6 +21,7 @@ api.add_resource(VistaBasic, '/candidatos/basicas/llenar')
 api.add_resource(VistaDatos, '/candidatos/llenar')"""
 #api.add_resource(VistaConsultarCandidatos, '/candidatos/consultar')
 api.add_resource(VistaBorrar, '/candidatos/borrar')
+api.add_resource(VistaCandidatosPerfiles, '/candidatos/perfiles')
 api.add_resource(VistaPing, '/candidato/ping')
 
 

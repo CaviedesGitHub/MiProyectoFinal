@@ -14,6 +14,40 @@ import requests
 import json
 from faker import Faker
 
+#################################################################################
+####################################   EMPRESAS   ###############################
+#################################################################################
+
+class VistaPerfiles(Resource):
+    def post(self, id_proy):
+        headers=request.headers
+        body=request.json
+        response = send_post_request(url=f"{current_app.config['HOST_PORT_EMPRESA']}{request.path}",
+                           body=body, headers=headers, tiempoespera=5000)
+        return response, 200
+        
+class VistaProyecto(Resource):
+    def get(self, id_proy):
+        headers={}
+        response = send_get_request(url=f"{current_app.config['HOST_PORT_EMPRESA']}{request.path}",
+                                 headers=headers, tiempoespera=5000)
+        return response, 200
+
+
+class VistaProyectos(Resource):
+    def post(self, id_emp):
+        headers=request.headers
+        body=request.json
+        response = send_post_request(url=f"{current_app.config['HOST_PORT_EMPRESA']}{request.path}",
+                           body=body, headers=headers, tiempoespera=5000)
+        return response, 200
+
+    def get(self, id_emp):
+        headers={}
+        response = send_get_request(url=f"{current_app.config['HOST_PORT_EMPRESA']}{request.path}",
+                                 headers=headers, tiempoespera=5000)
+        return response, 200
+
 
 class VistaEmpresas(Resource):
     def post(self):
@@ -36,6 +70,9 @@ class VistaEmpresa(Resource):
                                  headers=headers, tiempoespera=5000)
         return response, 200
 
+#################################################################################
+#################################   FIN EMPRESAS   ##############################
+#################################################################################
 
 class VistaPing(Resource):
     def get(self):

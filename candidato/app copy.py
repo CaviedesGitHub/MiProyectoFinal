@@ -1,6 +1,6 @@
-from . import create_app
-from .vistas.vistas import VistaPing, VistaBorrar, VistaCandidatosPerfiles, VistaCandidato, VistaEnv, VistaRaiz
-from .modelos.modelos import db, Candidato, Estado
+from candidato import create_app
+from candidato.vistas.vistas import VistaPing, VistaBorrar, VistaCandidatosPerfiles, VistaCandidato, VistaEnv, VistaRaiz
+from candidato.modelos.modelos import db, Candidato, Estado
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
 from faker import Faker

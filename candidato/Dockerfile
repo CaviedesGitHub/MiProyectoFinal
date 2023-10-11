@@ -19,7 +19,7 @@ EXPOSE 5005
 EXPOSE 5006
 EXPOSE 5007
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "candidato_ms.wsgi:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "candidato.wsgi:application"]
 
 
 

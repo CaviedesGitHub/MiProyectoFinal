@@ -1,0 +1,155 @@
+class prueba:
+    def test_raiz(self):
+        endpoint_raiz='/'
+        solicitud_raiz=self.client.get(endpoint_raiz)
+        respuesta_raiz=json.loads(solicitud_raiz.get_data())
+        msg=respuesta_raiz["Mensaje"]
+        self.assertEqual(solicitud_raiz.status_code, 200)
+        self.assertIn("Hola", msg)
+
+    def test_env(self):
+        endpoint_env='/env'
+        solicitud_env=self.client.get(endpoint_env)
+        self.assertEqual(solicitud_env.status_code, 200)
+
+    def test_valida_crear_blmail(self):
+        headers={
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer {}'.format(self.tokenfijo)
+        }
+
+        endpoint_blacklist='/blacklists/'
+
+        nuevo_blacklistmail={
+            "email" : "caviedes72@yahoo.com",
+            "app_uuid" : str(uuid.uuid4()),
+            "blocked_reason" : "Por Mala Paga"
+        }
+        solicitud_nuevo_blmail=self.client.post(endpoint_blacklist, 
+                                                data=json.dumps(nuevo_blacklistmail), 
+                                                headers=headers)
+        respuesta_nuevo_blmail=json.loads(solicitud_nuevo_blmail.get_data())
+        self.assertEqual(solicitud_nuevo_blmail.status_code, 201)
+
+        nuevo_blacklistmail={
+            "app_uuid" : str(uuid.uuid4()),
+            "blocked_reason" : "Por Mala Paga"
+        }
+        solicitud_nuevo_blmail=self.client.post(endpoint_blacklist, 
+                                                data=json.dumps(nuevo_blacklistmail), 
+                                                headers=headers)
+        respuesta_nuevo_blmail=json.loads(solicitud_nuevo_blmail.get_data())
+        msg=respuesta_nuevo_blmail["mensaje"]
+        self.assertEqual(solicitud_nuevo_blmail.status_code, 400)
+        self.assertEqual(msg, "Falta(n) uno o mas campos en la peticion.")
+
+        nuevo_blacklistmail={
+            "email" : "caviedes72@yahoo.com",
+            "blocked_reason" : "Por Mala Paga"
+        }
+        solicitud_nuevo_blmail=self.client.post(endpoint_blacklist, 
+                                                data=json.dumps(nuevo_blacklistmail), 
+                                                headers=headers)
+        respuesta_nuevo_blmail=json.loads(solicitud_nuevo_blmail.get_data())
+        msg=respuesta_nuevo_blmail["mensaje"]
+        self.assertEqual(solicitud_nuevo_blmail.status_code, 400)
+        self.assertEqual(msg, "Falta(n) uno o mas campos en la peticion.")
+
+        nuevo_blacklistmail={
+            "email" : "caviedes72@yahoo.com",
+            "app_uuid" : str(uuid.uuid4())
+        }
+        solicitud_nuevo_blmail=self.client.post(endpoint_blacklist, 
+                                                data=json.dumps(nuevo_blacklistmail), 
+                                                headers=headers)
+        respuesta_nuevo_blmail=json.loads(solicitud_nuevo_blmail.get_data())
+        msg=respuesta_nuevo_blmail["mensaje"]
+        self.assertEqual(solicitud_nuevo_blmail.status_code, 400)
+        self.assertEqual(msg, "Falta(n) uno o mas campos en la peticion.")
+
+    def test_valida_consultar_blmail(self):
+        headers={
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer {}'.format(self.tokenfijo)
+        }
+
+        endpoint_blacklist='/blacklists/'
+
+        nuevo_blacklistmail={
+            "email" : "caviedes72@xyz.com",
+            "app_uuid" : str(uuid.uuid4()),
+            "blocked_reason" : "Por Mala Paga"
+        }
+        solicitud_nuevo_blmail=self.client.post(endpoint_blacklist, 
+                                                data=json.dumps(nuevo_blacklistmail), 
+                                                headers=headers)
+        respuesta_nuevo_blmail=json.loads(solicitud_nuevo_blmail.get_data())
+        self.assertEqual(solicitud_nuevo_blmail.status_code, 201)
+
+
+        endpoint_blacklist='/blacklists/'+'caviedes72@xyz.com'
+        solicitud_consulta_blmail=self.client.get(endpoint_blacklist, 
+                                                headers=headers)
+        respuesta_consulta_blmail=json.loads(solicitud_consulta_blmail.get_data())
+        msg=respuesta_consulta_blmail["Encontrado"]
+        self.assertEqual(solicitud_consulta_blmail.status_code, 200)
+        self.assertTrue(msg)
+
+        endpoint_blacklist='/blacklists/'+'caviedes72@abc.com'
+        solicitud_consulta_blmail=self.client.get(endpoint_blacklist, 
+                                                headers=headers)
+        respuesta_consulta_blmail=json.loads(solicitud_consulta_blmail.get_data())
+        msg=respuesta_consulta_blmail["Encontrado"]
+        self.assertEqual(solicitud_consulta_blmail.status_code, 200)
+        self.assertFalse(msg)
+
+    def test_valida_token(self):
+        headers={
+        }
+
+        endpoint_blacklist='/blacklists/'
+
+        nuevo_blacklistmail={
+            "email" : "caviedes72@xyz.com",
+            "app_uuid" : str(uuid.uuid4()),
+            "blocked_reason" : "Por Mala Paga"
+        }
+        solicitud_nuevo_blmail=self.client.post(endpoint_blacklist, 
+                                                data=json.dumps(nuevo_blacklistmail), 
+                                                headers=headers)
+        respuesta_nuevo_blmail=json.loads(solicitud_nuevo_blmail.get_data())
+        self.assertEqual("Missing JWT", respuesta_nuevo_blmail) 
+        
+        headers={
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer {}'.format("12345.6789.0")
+        }
+
+        solicitud_nuevo_blmail=self.client.post(endpoint_blacklist, 
+                                                data=json.dumps(nuevo_blacklistmail), 
+                                                headers=headers)
+        respuesta_nuevo_blmail=json.loads(solicitud_nuevo_blmail.get_data())
+        self.assertEqual("Usuario Desautorizado", respuesta_nuevo_blmail) 
+
+        headers={
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer {}'.format("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3NTc4NDI0MiwianRpIjoiYzBiMDBmMTMtNmRlYi00NTQ4LWE3ZDQtMDBhM2FlMGM5YzVlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNjc1Nzg0MjQyLCJleHAiOjE2NzU3OTE0NDJ9.JmZI2kzjLdV69BBhzZBrrBTHFeAM8rnc7Ls1Lg_ohSQ")
+        }
+
+        solicitud_nuevo_blmail=self.client.post(endpoint_blacklist, 
+                                                data=json.dumps(nuevo_blacklistmail), 
+                                                headers=headers)
+        respuesta_nuevo_blmail=json.loads(solicitud_nuevo_blmail.get_data())
+        self.assertEqual("Signature verification failed", respuesta_nuevo_blmail) 
+
+        headers={
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer {}'.format(self.token)
+        }
+
+        solicitud_nuevo_blmail=self.client.post(endpoint_blacklist, 
+                                                data=json.dumps(nuevo_blacklistmail), 
+                                                headers=headers)
+        respuesta_nuevo_blmail=json.loads(solicitud_nuevo_blmail.get_data())
+        self.assertEqual("Ataque Detectado", respuesta_nuevo_blmail) 
+

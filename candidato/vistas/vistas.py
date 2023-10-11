@@ -3,7 +3,7 @@ from datetime import timedelta
 import math
 import random
 import uuid
-from flask import request
+from flask import request, current_app
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
 from candidato.modelos.modelos import db, Candidato, CandidatoSchema, Estado
@@ -33,6 +33,18 @@ class VistaBorrar(Resource):
                 print("registro no se pudo borrar.")
         return {"Mensaje":"registros borrados: "+str(registros)}, 200
 
+class VistaCandidato(Resource):
+    def get(self, id_cand):
+        print("Consultar Candidato")
+        try:
+            candidato = Candidato.query.get_or_404(id_cand)
+            return candidato_schema.dump(candidato)
+        except Exception as inst:
+            print(type(inst))    # the exception instance
+            #print(inst)
+            print("No se pudo obtener la informacion del candidato.")
+            return {"Mensaje: ":"Error: No se pudo obtener la informacion del candidato."}, 200
+
 class VistaCandidatosPerfiles(Resource):
     def post(self):
         print("Seleccion de candidatos segun perfiles")
@@ -55,3 +67,19 @@ class VistaPing(Resource):
         print("pong")
         return {"Mensaje":"Pong"}, 200
 
+class VistaRaiz(Resource):
+    def get(self):
+        print("Hola")
+        return {"Mensaje":"Hola, Bienvenido De Nuevo v3.3 Inmutable"}, 200
+
+class VistaEnv(Resource):
+    def get(self):
+        print("Environment")
+        return {
+            "RDS_DB_NAME":os.environ['RDS_DB_NAME'],
+            "RDS_USERNAME":os.environ['RDS_USERNAME'],
+            "RDS_PASSWORD":os.environ['RDS_PASSWORD'],
+            "RDS_HOSTNAME":os.environ['RDS_HOSTNAME'],
+            "RDS_PORT":os.environ['RDS_PORT'],
+            "URL_DATABASE":current_app.config['SQLALCHEMY_DATABASE_URI'],
+        }, 200

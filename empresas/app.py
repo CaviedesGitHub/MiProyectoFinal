@@ -6,10 +6,13 @@ from flask_restful import Api
 from flask_jwt_extended import JWTManager
 from faker import Faker
 import random
+import os
 
-app=create_app('default')
+settings_module = os.getenv('APP_SETTINGS_MODULE','empresas.config.ProductionConfig')
+app = create_app('default', settings_module)
 app_context=app.app_context()
 app_context.push()
+
 
 db.init_app(app)
 db.create_all()

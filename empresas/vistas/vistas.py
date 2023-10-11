@@ -3,7 +3,7 @@ from datetime import timedelta
 import math
 import random
 import uuid
-from flask import request
+from flask import request, current_app
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
 from empresas.modelos.modelos import db, Empresa, EmpresaSchema, Estado, Proyecto, ProyectoSchema
@@ -64,7 +64,6 @@ class VistaEmpresa(Resource):
             empresa = Empresa.query.get_or_404(id_empresa)
             return empresa_schema.dump(empresa)
         except Exception as inst:
-            db.session.rollback()
             print(type(inst))    # the exception instance
             #print(inst)
             print("No se pudo obtener la informacion de la Empresa.")
@@ -124,7 +123,7 @@ class VistaPerfiles(Resource):
             try:
                 headers={}
                 body=request.json.get("lstHabils")
-                response = send_post_request(f"http://127.0.0.1:5004/perfil/crear", headers=headers, body=body)
+                response = send_post_request(f"{current_app.config['HOST_PORT_PERFILES']}/perfil/crear", headers=headers, body=body)
                 print(response) 
                 if response.get("id_perfil")!=0:
                     npp=PerfilesProyecto()

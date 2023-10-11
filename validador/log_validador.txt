@@ -245,3 +245,143 @@
 2023-10-08;20:15:54; Peticion: 1; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
 2023-10-08;20:15:54; Peticion: 1; Motor: 2; Intento:3; Msg: Error. Motor NO disponible.
 2023-10-08;20:15:54; Peticion: 1; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;10:26:12; Peticion: 1; Motor: 2; Intento:1; Msg: Error. Motor NO disponible.
+2023-10-11;10:26:12; Peticion: 1; Motor: 2; Intento:2; Msg: Error. Motor NO disponible.
+2023-10-11;10:26:12; Peticion: 1; Motor: 3; Intento:1; Msg: Error. Motor NO disponible.
+2023-10-11;10:26:12; Peticion: 1; Motor: 1; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;10:26:12; Peticion: 1; Motor: 3; Intento:2; Msg: Error. Motor NO disponible.
+2023-10-11;10:26:12; Peticion: 1; Motor: 2; Intento:3; Msg: Error. Motor NO disponible.
+2023-10-11;10:26:12; Peticion: 1; Motor: 3; Intento:3; Msg: Error. Motor NO disponible.
+2023-10-11;10:26:12; Peticion: 1; Motor: 1; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;10:26:12; Peticion: 1; Motor: 1; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;10:32:35; Peticion: 2; Motor: 2; Intento:1; Msg: Error. Motor NO disponible.
+2023-10-11;10:32:35; Peticion: 2; Motor: 2; Intento:2; Msg: Error. Motor NO disponible.
+2023-10-11;10:32:35; Peticion: 2; Motor: 3; Intento:1; Msg: Error. Motor NO disponible.
+2023-10-11;10:32:35; Peticion: 2; Motor: 2; Intento:3; Msg: Error. Motor NO disponible.
+2023-10-11;10:32:35; Peticion: 2; Motor: 3; Intento:2; Msg: Error. Motor NO disponible.
+2023-10-11;10:32:35; Peticion: 2; Motor: 3; Intento:3; Msg: Error. Motor NO disponible.
+2023-10-11;10:32:35; Peticion: 2; Motor: 1; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;10:32:35; Peticion: 2; Motor: 1; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;10:32:35; Peticion: 2; Motor: 1; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;10:33:18; Peticion: 3; Motor: 3; Intento:1; Msg: Error. Motor NO disponible.
+2023-10-11;10:33:18; Peticion: 3; Motor: 2; Intento:1; Msg: Error. Motor NO disponible.
+2023-10-11;10:33:18; Peticion: 3; Motor: 2; Intento:2; Msg: Error. Motor NO disponible.
+2023-10-11;10:33:18; Peticion: 3; Motor: 3; Intento:2; Msg: Error. Motor NO disponible.
+2023-10-11;10:33:18; Peticion: 3; Motor: 3; Intento:3; Msg: Error. Motor NO disponible.
+2023-10-11;10:33:18; Peticion: 3; Motor: 2; Intento:3; Msg: Error. Motor NO disponible.
+2023-10-11;10:33:18; Peticion: 3; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;14:16:13; Peticion: 4; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;14:16:13; Peticion: 4; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:13; Peticion: 4; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:13; Peticion: 4; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:13; Peticion: 4; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:13; Peticion: 4; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:13; Peticion: 4; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:27; Peticion: 5; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:27; Peticion: 5; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:27; Peticion: 5; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;14:16:27; Peticion: 5; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:27; Peticion: 5; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:27; Peticion: 5; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:27; Peticion: 5; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:53; Peticion: 6; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;14:16:53; Peticion: 6; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:53; Peticion: 6; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:53; Peticion: 6; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:53; Peticion: 6; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:53; Peticion: 6; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:53; Peticion: 6; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:57; Peticion: 7; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;14:16:57; Peticion: 7; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:57; Peticion: 7; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:57; Peticion: 7; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:57; Peticion: 7; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:57; Peticion: 7; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:16:57; Peticion: 7; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:12; Peticion: 8; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;14:17:12; Peticion: 8; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:12; Peticion: 8; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:12; Peticion: 8; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:12; Peticion: 8; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:12; Peticion: 8; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:12; Peticion: 8; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:21; Peticion: 9; Motor: 1; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:21; Peticion: 9; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:21; Peticion: 9; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:21; Peticion: 9; Motor: 1; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:21; Peticion: 9; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:21; Peticion: 9; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:21; Peticion: 9; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:21; Peticion: 9; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:17:21; Peticion: 9; Motor: 1; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:35:03; Peticion: 10; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:35:03; Peticion: 10; Motor: 1; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:35:03; Peticion: 10; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:35:03; Peticion: 10; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:35:03; Peticion: 10; Motor: 1; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:35:03; Peticion: 10; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:35:03; Peticion: 10; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:35:03; Peticion: 10; Motor: 1; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:35:03; Peticion: 10; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:37:22; Peticion: 11; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:37:22; Peticion: 11; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:37:22; Peticion: 11; Motor: 1; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:37:22; Peticion: 11; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:37:22; Peticion: 11; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:37:22; Peticion: 11; Motor: 1; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:37:22; Peticion: 11; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:37:22; Peticion: 11; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:37:22; Peticion: 11; Motor: 1; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:41:20; Peticion: 12; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:41:20; Peticion: 12; Motor: 1; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:41:20; Peticion: 12; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:41:20; Peticion: 12; Motor: 1; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:41:20; Peticion: 12; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:41:20; Peticion: 12; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:41:20; Peticion: 12; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:41:20; Peticion: 12; Motor: 1; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:41:20; Peticion: 12; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:43:07; Peticion: 3; Motor: 0; Intento:1; Msg: Exito. Respuesta Exitosa desde Microservicio Perfiles.
+2023-10-11;14:43:07; Peticion: 3; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:43:07; Peticion: 3; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:43:07; Peticion: 3; Motor: 1; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:43:07; Peticion: 3; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:43:07; Peticion: 3; Motor: 1; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:43:07; Peticion: 3; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:43:07; Peticion: 3; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:43:07; Peticion: 3; Motor: 1; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:43:07; Peticion: 3; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:46:04; Peticion: 1; Motor: 0; Intento:1; Msg: Exito. Respuesta Exitosa desde Microservicio Perfiles.
+2023-10-11;14:46:04; Peticion: 1; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:46:04; Peticion: 1; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:46:04; Peticion: 1; Motor: 1; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:46:04; Peticion: 1; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:46:04; Peticion: 1; Motor: 1; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:46:04; Peticion: 1; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:46:04; Peticion: 1; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:46:04; Peticion: 1; Motor: 1; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:46:04; Peticion: 1; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:08; Peticion: 2; Motor: 0; Intento:1; Msg: Exito. Respuesta Exitosa desde Microservicio Perfiles.
+2023-10-11;14:52:08; Peticion: 2; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;14:52:08; Peticion: 2; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:08; Peticion: 2; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:08; Peticion: 2; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:08; Peticion: 2; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:08; Peticion: 2; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:08; Peticion: 2; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:43; Peticion: 4; Motor: 0; Intento:1; Msg: Exito. Respuesta Exitosa desde Microservicio Perfiles.
+2023-10-11;14:52:43; Peticion: 4; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;14:52:43; Peticion: 4; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:43; Peticion: 4; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:43; Peticion: 4; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:43; Peticion: 4; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:43; Peticion: 4; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:43; Peticion: 4; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:50; Peticion: 5; Motor: 0; Intento:1; Msg: Exito. Respuesta Exitosa desde Microservicio Perfiles.
+2023-10-11;14:52:50; Peticion: 5; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:50; Peticion: 5; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:50; Peticion: 5; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:50; Peticion: 5; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:50; Peticion: 5; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:50; Peticion: 5; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;14:52:50; Peticion: 5; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..

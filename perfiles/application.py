@@ -282,7 +282,7 @@ class VistaConsultaPefiles(Resource):
             data1.append(resp)
             return {'ListaPerfiles': data1, 'totalCount': len(data1)}, 200
         else:
-            return {"Mensaje":"Falta la lista de habilidades."}, 200
+            return {"Mensaje":"Falta la lista de habilidades.", 'ListaPerfiles': [], 'totalCount': 0}, 200
 
 
 class VistaPing(Resource):

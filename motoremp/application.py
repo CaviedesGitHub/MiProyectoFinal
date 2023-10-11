@@ -36,7 +36,7 @@ import requests
 class VistaEmparejar(Resource):
     def post(self):
         print("Emparejando")
-        #print(request.json)
+        print(request.json)
         lstPerfiles=request.json.get("ListaPerfiles")
         lstIdPerfiles=[]
         for p in lstPerfiles:
@@ -48,8 +48,19 @@ class VistaEmparejar(Resource):
         #lstIdPerfiles=[1,3,5,9]
         headers={} 
         body={"lstPerfiles":lstIdPerfiles}
-        response = send_post_request(f"{application.config['HOST_PORT_CANDIDATO']}/candidatos/perfiles",
-                                 headers=headers, body=body)
+        print(f"{application.config['HOST_PORT_CANDIDATO']}/candidatos/perfiles")
+        #response = send_post_request(f"{application.config['HOST_PORT_CANDIDATO']}/candidatos/perfiles",headers=headers, body=body)
+        response = solicitud_candidatos(f"{application.config['HOST_PORT_CANDIDATO']}/candidatos/perfiles", body=body, headers=headers)        
+        if response==-1 or response is None:
+            return {"Mensaje ":"Microservicio Candidatos NO esta disponible.", "Candidatos":[]}, 200
+        else:
+            if response.get("Candidatos") is None:
+                return {"Mensaje ":"Parametro Candidatos Ausente.", "Candidatos":[]}, 200
+            else:
+                if len(response.get("Candidatos"))==0:
+                    return {"Mensaje ":"Parametro Candidatos Vacio.", "Candidatos":[]}, 200
+
+        
         lstCandidatos=response.get("Candidatos")
         for p in lstPerfiles:
             print(p)
@@ -87,7 +98,22 @@ def send_post_request(url, headers, body):
         #print(inst)
         return -1
 
+def solicitud_candidatos(url, body, headers):
+    headers=headers #headers = {"Authorization": f"Bearer {os.environ.get('TRUE_NATIVE_TOKEN')}"}
+    body=body #body = {"user": user_data, "transactionIdentifier": str(uuid.uuid4()), "userIdentifier": str(id),
+        #"userWebhook": f"http://{os.environ.get('USERS_MS')}/users/verification-webhook"}
 
+    for i in range(3):
+        response = send_post_request(url, headers=headers, body=body)
+        if response==-1:
+            print("Error. Miscroservicio Perfiles NO esta disponible.")
+        elif response is None:
+            print("Error Microservicio Perfiles. Codigo de respuesta diferente de 200.")
+        else:
+            print("Exito. Respuesta Exitosa desde Microservicio Perfiles.")
+            break
+    #print(response)
+    return response
 
 
 api = Api(application)

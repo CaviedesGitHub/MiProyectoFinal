@@ -1,3 +1,3 @@
-from perfiles.app import app
+from perfiles.application import application
 if __name__ == "__main__":
-    app.run()
+    application.run()

@@ -1,3 +1,3 @@
-from validador.app import app
+from validador.application import application
 if __name__ == "__main__":
-    app.run()
+    application.run()

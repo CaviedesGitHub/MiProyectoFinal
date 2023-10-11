@@ -1,3 +1,3 @@
-from motoremp.app import app
+from motoremp.application import application
 if __name__ == "__main__":
-    app.run()
+    application.run()

@@ -6,7 +6,7 @@ class Config(object):
     JWT_SECRET_KEY = 'proyecto2_2023'
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/GatewayBD'
+    SQLALCHEMY_DATABASE_URI = "postgresql://postgres:postgres@abcjobs-instancia.cvpp3kshvevi.us-east-2.rds.amazonaws.com:5432/GatewayBD"
     JWT_ACCESS_TOKEN_EXPIRES = False
 
     HOST_PORT_GATEWAY = "http://localhost:5000"

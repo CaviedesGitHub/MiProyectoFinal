@@ -1,12 +1,14 @@
 # Fichero de configuración config.py
 
+
 class Config(object):
     SECRET_KEY = '7110c8ae51a4b5af97be6534caef90e4bb9bdcb3380af008f90b23a5d1616bf319bc298105da20fe'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     JWT_SECRET_KEY = 'proyecto2_2023'
 
+
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = "postgresql://postgres:postgres@abcjobs-instancia.cvpp3kshvevi.us-east-2.rds.amazonaws.com:5432/EmpresasBD"
+    SQLALCHEMY_DATABASE_URI = "postgresql://postgres:postgres@abcjobs-instancia.cvpp3kshvevi.us-east-2.rds.amazonaws.com:5432/PerfilesBD"
     JWT_ACCESS_TOKEN_EXPIRES = False
 
     HOST_PORT_GATEWAY = "http://localhost:5000"
@@ -20,8 +22,9 @@ class ProductionConfig(Config):
     HOST_PORT_CANDIDATO = "http://candidato-env.eba-ppp3p2tu.us-east-2.elasticbeanstalk.com"
     HOST_PORT_PRUEBASTEC = "http://localhost:5009"
 
+
 class DevelopmentConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/EmpresasBD'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/PerfilesBD'
     JWT_ACCESS_TOKEN_EXPIRES = False
 
     HOST_PORT_GATEWAY = "http://localhost:5000"
@@ -34,9 +37,10 @@ class DevelopmentConfig(Config):
     HOST_PORT_AUTH = "http://localhost:5007"
     HOST_PORT_CANDIDATO = "http://localhost:5008"
     HOST_PORT_PRUEBASTEC = "http://localhost:5009"
+
 
 class StagingConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/EmpresasBD'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/PerfilesBD'
     JWT_ACCESS_TOKEN_EXPIRES = False
 
     HOST_PORT_GATEWAY = "http://localhost:5000"
@@ -49,11 +53,12 @@ class StagingConfig(Config):
     HOST_PORT_AUTH = "http://localhost:5007"
     HOST_PORT_CANDIDATO = "http://localhost:5008"
     HOST_PORT_PRUEBASTEC = "http://localhost:5009"
+
 
 class TestingConfig(Config):
     DEBUG = True
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/EmpresasBD'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/PerfilesBD'
     JWT_ACCESS_TOKEN_EXPIRES = False
 
     HOST_PORT_GATEWAY = "http://localhost:5000"

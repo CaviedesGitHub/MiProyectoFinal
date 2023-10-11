@@ -6,7 +6,7 @@ class Config(object):
     JWT_SECRET_KEY = 'proyecto2_2023'
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = "postgresql://postgres:postgres@abcjobs-instancia.cvpp3kshvevi.us-east-2.rds.amazonaws.com:5432/EmpresasBD"
+    SQLALCHEMY_DATABASE_URI = "postgresql://postgres:postgres@abcjobs.chpn4nrvpnvk.us-east-1.rds.amazonaws.com:5432/CandidatoBD"
     JWT_ACCESS_TOKEN_EXPIRES = False
 
     HOST_PORT_GATEWAY = "http://localhost:5000"
@@ -20,8 +20,10 @@ class ProductionConfig(Config):
     HOST_PORT_CANDIDATO = "http://candidato-env.eba-ppp3p2tu.us-east-2.elasticbeanstalk.com"
     HOST_PORT_PRUEBASTEC = "http://localhost:5009"
 
+
+
 class DevelopmentConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/EmpresasBD'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/CandidatosBD'
     JWT_ACCESS_TOKEN_EXPIRES = False
 
     HOST_PORT_GATEWAY = "http://localhost:5000"
@@ -36,7 +38,7 @@ class DevelopmentConfig(Config):
     HOST_PORT_PRUEBASTEC = "http://localhost:5009"
 
 class StagingConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/EmpresasBD'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/CandidatosBD'
     JWT_ACCESS_TOKEN_EXPIRES = False
 
     HOST_PORT_GATEWAY = "http://localhost:5000"
@@ -53,7 +55,7 @@ class StagingConfig(Config):
 class TestingConfig(Config):
     DEBUG = True
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/EmpresasBD'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/CandidatosBD'
     JWT_ACCESS_TOKEN_EXPIRES = False
 
     HOST_PORT_GATEWAY = "http://localhost:5000"

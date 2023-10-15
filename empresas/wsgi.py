@@ -1,3 +1,3 @@
-from empresas.application import application
+from empresas.app import app
 if __name__ == "__main__":
-    application.run()
+    app.run()

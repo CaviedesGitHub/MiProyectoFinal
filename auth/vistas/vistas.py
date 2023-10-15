@@ -1,5 +1,5 @@
 from flask import request
-from flask_jwt_extended import jwt_required, create_access_token
+from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity, get_jwt
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
 from auth.modelos.modelos import db, Usuario, UsuarioSchema, UserType
@@ -68,6 +68,32 @@ class VistaUsuario(Resource):
         db.session.delete(usuario)
         db.session.commit()
         return "Usuario Borrado.",  204
+
+class VistaAuthorization(Resource):
+    @jwt_required()
+    def post(self):
+        id_usuario = get_jwt_identity()
+        usuario = Usuario.query.get_or_404(id_usuario)
+        if usuario is not None:
+            roles=request.json.get("roles", None)
+            if roles is not None:
+                if len(roles)!=0:
+                    claims = get_jwt()  #claims = get_jwt_claims()
+                    autorizado=False
+                    for r in roles:
+                        if claims['MyUserType'] == r:
+                            autorizado=True
+                    if autorizado:
+                        return {"Mensage":"Usuario Autorizado", "id": usuario.id, "authorization": 1, "rol": usuario.tipo.name}, 200
+                    else:
+                        return {"Mensage":"Usuario Desautorizado", "id": usuario.id, "authorization": None, "rol": usuario.tipo.name}, 200
+                else:
+                    return {"Mensage":"Usuario Autorizado", "id": usuario.id, "authorization": 1, "rol": usuario.tipo.name}, 200
+            else:
+                return {"Mensage":"Peticion incorrecta", "id": usuario.id, "authorization": None, "rol": usuario.tipo.name}, 200    
+        else:
+            return {"Mensage":"Usuario no existe", "id": id_usuario, "authorization": None, "rol": "DESCONOCIDO"}, 200
+        
 
 class VistaPing(Resource):
     def get(self):

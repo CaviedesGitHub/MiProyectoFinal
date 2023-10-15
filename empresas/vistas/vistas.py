@@ -16,6 +16,7 @@ import json
 from faker import Faker
 
 from flask_jwt_extended import get_jwt_identity, jwt_required, create_access_token, verify_jwt_in_request
+from flask_jwt_extended import get_jwt
 from flask_jwt_extended.exceptions import NoAuthorizationError
 from functools import wraps
 from jwt import InvalidSignatureError, ExpiredSignatureError, InvalidTokenError
@@ -33,12 +34,25 @@ def authorization_required():
         @wraps(fn)
         def decorator(*args, **kwargs):
             try:
-                verify_jwt_in_request()    
-                user_jwt=str(int(get_jwt_identity()))
-                print(user_jwt) 
-                claims = get_jwt()
-                return jsonify(foo=claims["foo"])
-                return fn(*args, **kwargs)
+                verify_jwt_in_request()  
+                try:
+                    req_headers = request.headers  #{"Authorization": f"Bearer {lst[1]}"}
+                    roles= {"roles":["EMPRESA","EMPLEADO_ABC"]}
+                    r = requests.post(f"{current_app.config['HOST_PORT_AUTH']}/auth/me", headers=req_headers, json=roles)
+                    if r.json().get("authorization") is None:
+                        return {"Error:": "Usuario Desautorizado"}, 401
+                    else:
+                        lstTokens=request.path.split(sep='/')    
+                        lstTokens[len(lstTokens)-1]
+                        user_url=lstTokens[len(lstTokens)-1]
+                        if r.json().get("id")==int(user_url):
+                            return fn(*args, **kwargs)       
+                        else:
+                            return {"Error:": "Inconsistencia en la peticion"}, 401
+                except Exception as inst:
+                    print(type(inst))    # the exception instance
+                    print(inst)
+                    return {"Error:": "Usuario Desautorizado"}, 401
             except ExpiredSignatureError:
                 return {"Error:": "Token Expired"}, 401
             except InvalidSignatureError:
@@ -83,12 +97,12 @@ def empresa_required():
     return wrapper
 
 
-class VistaPing(Resource):
-    #@empresa_required()
-    def get(self):
+class VistaEmpresaUsuario(Resource):
+    @authorization_required()
+    def get(self, id_usuario):
         print("Consulta Empresa Usuario")
-        #print(get_jwt_identity())
-        return {"Empresa":"Lep_Corp"}, 200
+        empresa = Empresa.get_by_idUser(id_usuario)
+        return empresa_schema.dump(empresa), 200
 
 class VistaEmpresas(Resource):
     def post(self):
@@ -214,7 +228,7 @@ class VistaPerfiles(Resource):
         else:
             return {"Mensaje: ":"Error: Perfil no se pudo crear. El proyecto no existe."}, 200
 
-class VistaEmpresaUsuario(Resource):
+class VistaPing(Resource):
     def get(self):
         print("pongX")
         return {"Mensaje":"Pong"}, 200
@@ -230,4 +244,14 @@ def send_post_request(url, headers, body):
         print(type(inst))
         #print(inst)
         return -1
+
+"""
+
+
+req_headers = {"Authorization": f"Bearer {lst[1]}"}
+                r = requests.get(
+                    f"http://{os.environ['USERS_MS']}/users/me", headers=req_headers)
+                # r=requests.get("http://127.0.0.1:5000/users/me", headers=req_headers)
+                # r=requests.get("http://users-ms:5000/users/me", headers=req_headers)
+                return r"""
 

@@ -31,7 +31,7 @@ api.add_resource(VistaDatos, '/candidatos/llenar')"""
 api.add_resource(VistaPerfiles, '/empresas/proyectos/<int:id_proy>/perfiles')
 api.add_resource(VistaProyecto, '/empresas/proyecto/<int:id_proy>')
 api.add_resource(VistaProyectos, '/empresas/<int:id_emp>/proyectos')
-api.add_resource(VistaEmpresaUsuario, '/miempresa')
+api.add_resource(VistaEmpresaUsuario, '/miempresa/<int:id_usuario>')
 api.add_resource(VistaEmpresas, '/empresas')
 api.add_resource(VistaEmpresa, '/empresa/<int:id_empresa>')
 api.add_resource(VistaPing, '/empresas/ping')

@@ -57,6 +57,10 @@ class Empresa(db.Model):
     def get_count():
         return Empresa.query.count()
 
+    @staticmethod
+    def get_by_idUser(idUser):
+        return Empresa.query.filter_by(id_usuario=idUser).first()
+
 class EnumADiccionario(fields.Field):
     def _serialize(self, value, attr, obj, **kwargs):
         if value is None:

@@ -1,5 +1,5 @@
 from auth import create_app
-from auth.vistas.vistas import VistaPing, VistaLogIn, VistaSignIn, VistaUsuario
+from auth.vistas.vistas import VistaPing, VistaLogIn, VistaSignIn, VistaUsuario, VistaAuthorization
 from auth.modelos.modelos import db, Usuario, UserType
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
@@ -21,6 +21,7 @@ api = Api(app)
 api.add_resource(VistaSignIn, '/auth/signup')
 api.add_resource(VistaLogIn, '/auth/login')
 api.add_resource(VistaUsuario, '/usuario/<int:id_usuario>')
+api.add_resource(VistaAuthorization, '/auth/me')
 api.add_resource(VistaPing, '/auth/ping')
 
 

@@ -385,3 +385,27 @@
 2023-10-11;14:52:50; Peticion: 5; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
 2023-10-11;14:52:50; Peticion: 5; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
 2023-10-11;14:52:50; Peticion: 5; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;22:31:19; Peticion: 7; Motor: 0; Intento:1; Msg: Exito. Respuesta Exitosa desde Microservicio Perfiles.
+2023-10-11;22:31:19; Peticion: 7; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;22:31:19; Peticion: 7; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:31:19; Peticion: 7; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:31:19; Peticion: 7; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:31:19; Peticion: 7; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:31:19; Peticion: 7; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:31:19; Peticion: 7; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:33:23; Peticion: 8; Motor: 0; Intento:1; Msg: Exito. Respuesta Exitosa desde Microservicio Perfiles.
+2023-10-11;22:33:23; Peticion: 8; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:33:23; Peticion: 8; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:33:23; Peticion: 8; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:33:23; Peticion: 8; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:33:23; Peticion: 8; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:33:23; Peticion: 8; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:33:23; Peticion: 8; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;22:36:14; Peticion: 9; Motor: 0; Intento:1; Msg: Exito. Respuesta Exitosa desde Microservicio Perfiles.
+2023-10-11;22:36:14; Peticion: 9; Motor: 1; Intento:1; Msg: Exito. Respuesta generada..
+2023-10-11;22:36:14; Peticion: 9; Motor: 2; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:36:14; Peticion: 9; Motor: 3; Intento:1; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:36:14; Peticion: 9; Motor: 3; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:36:14; Peticion: 9; Motor: 2; Intento:2; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:36:14; Peticion: 9; Motor: 3; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.
+2023-10-11;22:36:14; Peticion: 9; Motor: 2; Intento:3; Msg: Error. Codigo de respuesta diferente de 200.

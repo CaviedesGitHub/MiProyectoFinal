@@ -23,7 +23,7 @@ class ProductionConfig(Config):
 
 
 class DevelopmentConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/AuthBD'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:admin@localhost:5432/CandidatosBD'
     JWT_ACCESS_TOKEN_EXPIRES = False
 
     HOST_PORT_GATEWAY = "http://localhost:5000"

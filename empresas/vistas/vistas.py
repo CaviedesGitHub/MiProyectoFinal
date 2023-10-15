@@ -15,11 +15,80 @@ import requests
 import json
 from faker import Faker
 
+from flask_jwt_extended import get_jwt_identity, jwt_required, create_access_token, verify_jwt_in_request
+from flask_jwt_extended.exceptions import NoAuthorizationError
+from functools import wraps
+from jwt import InvalidSignatureError, ExpiredSignatureError, InvalidTokenError
+
+
 empresa_schema = EmpresaSchema()
 proyecto_schema = ProyectoSchema()
 perfilesproyecto_schema = PerfilesProyectoSchema()
 
 access_token_expires = timedelta(minutes=120)
+
+
+def authorization_required():
+    def wrapper(fn):
+        @wraps(fn)
+        def decorator(*args, **kwargs):
+            try:
+                verify_jwt_in_request()    
+                user_jwt=str(int(get_jwt_identity()))
+                print(user_jwt) 
+                claims = get_jwt()
+                return jsonify(foo=claims["foo"])
+                return fn(*args, **kwargs)
+            except ExpiredSignatureError:
+                return {"Error:": "Token Expired"}, 401
+            except InvalidSignatureError:
+                return {"Error:": "Signature verification failed"}, 401
+            except NoAuthorizationError:
+                return {"Error:": "Missing JWT"}, 401
+            except Exception as inst:
+                print("excepcion")
+                print(type(inst))    # the exception instance
+                print(inst)
+                return {"Error:": "Usuario Desautorizado"}, 401
+        return decorator
+    return wrapper
+
+def empresa_required():
+    def wrapper(fn):
+        @wraps(fn)
+        def decorator(*args, **kwargs):
+            try:
+                verify_jwt_in_request()  
+                claims = get_jwt()  #claims = get_jwt_claims()
+                try:
+                    print(claims)
+                    if claims['MyUserType'] != 'EMPRESA':
+                        return {"Error:": "Usuario Desautorizado"}, 401
+                    else:
+                        return fn(*args, **kwargs)                
+                except Exception as inst:
+                   return {"Error:": "Usuario Desautorizado"}, 401
+            except ExpiredSignatureError:
+                return {"Error:": "Token Expired"}, 401
+            except InvalidSignatureError:
+                return {"Error:": "Signature verification failed"}, 401
+            except NoAuthorizationError:
+                return {"Error:": "Missing JWT"}, 401
+            except Exception as inst:
+                print("excepcion")
+                print(type(inst))    # the exception instance
+                print(inst)
+                return {"Error:": "Usuario Desautorizado"}, 401
+        return decorator
+    return wrapper
+
+
+class VistaPing(Resource):
+    #@empresa_required()
+    def get(self):
+        print("Consulta Empresa Usuario")
+        #print(get_jwt_identity())
+        return {"Empresa":"Lep_Corp"}, 200
 
 class VistaEmpresas(Resource):
     def post(self):
@@ -145,9 +214,9 @@ class VistaPerfiles(Resource):
         else:
             return {"Mensaje: ":"Error: Perfil no se pudo crear. El proyecto no existe."}, 200
 
-class VistaPing(Resource):
+class VistaEmpresaUsuario(Resource):
     def get(self):
-        print("pong")
+        print("pongX")
         return {"Mensaje":"Pong"}, 200
 
 def send_post_request(url, headers, body):
@@ -161,3 +230,4 @@ def send_post_request(url, headers, body):
         print(type(inst))
         #print(inst)
         return -1
+
